@@ -9,7 +9,7 @@ Firstly Install latest version of Python https://www.python.org/downloads/
 
 1: Open up Command Prompt and run "pip install pythonosc asyncio"
 
-2: You'll need to add a Contact Receiver on your avatar and give it the parameter "Count-Boop" and make sure it's set to constant.
+2: You'll need to add a Contact Receiver on your avatar and give it the parameter "BoopCount" and make sure it's set to constant.
 
 3: Once your avatar has the receiver you can run the script and when a player triggers the contact it will count +1
 

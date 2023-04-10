@@ -41,7 +41,7 @@ async def main():
         output = data.decode('latin-1').replace("b'avatarparameters", "")
         output = re.sub(r'[^a-zA-Z0-9\s]', '', output)
 
-        if "Count-Boop" in output:
+        if "BoopCount" in output:
             await noseboops()
 
 try:

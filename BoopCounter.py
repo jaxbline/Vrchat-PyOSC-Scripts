@@ -2,9 +2,9 @@ import socket, time, re, asyncio, pickle
 from pythonosc import udp_client
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock.bind(("127.0.0.1", 9001))
+sock.bind(("localhost", 9001))
 
-client = udp_client.SimpleUDPClient("127.0.0.1", 9000)
+client = udp_client.SimpleUDPClient("localhost", 9000)
 
 db_file = 'BoopsCounted.pickle'
 

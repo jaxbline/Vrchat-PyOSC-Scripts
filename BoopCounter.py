@@ -1,4 +1,4 @@
-import socket, time, re, asyncio, pickle
+import socket, time, re, asyncio, json
 from pythonosc import udp_client
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -6,11 +6,11 @@ sock.bind(("127.0.0.1", 9001))
 
 client = udp_client.SimpleUDPClient("127.0.0.1", 9000)
 
-db_file = 'BoopsCounted.pickle'
+db_file = 'BoopsCounted.json'
 
 try:
-    with open(db_file, 'rb') as f:
-        boops = pickle.load(f)
+    with open(db_file, 'r') as f:
+        boops = json.load(f)
 except FileNotFoundError:
     boops = 0
     print("Creating new save file for boops count...")
@@ -30,8 +30,8 @@ async def noseboops():
     boops += call_count
     print(f"boops: {boops}")
     client.send_message("/chatbox/input", [f"Boops : {boops} ", True])
-    with open(db_file, 'wb') as f:
-        pickle.dump(boops, f)
+    with open(db_file, 'w') as f:
+        json.dump(boops, f)
     call_count = 0
     await asyncio.sleep(1)
 

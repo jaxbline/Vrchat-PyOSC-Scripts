@@ -2,7 +2,7 @@
 Just some random scripts I made for Vrchat using PyOSC
 
 
-Contact me at @[Jax]#1007 on Discord
+Contact me at @easyanticheat on Discord
 
 # Boop Counter Instructions
 Firstly Install latest version of Python https://www.python.org/downloads/
